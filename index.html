@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparação</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td><input id="i1"></td>
+            <td align="center">==</td>
+            <td><input id="i2"></td>
+            <td><button onclick="testar('1', '==')">Comparar</button></td>
+        </tr>
+        <tr>
+            <td><input id="i3"></td>
+            <td align="center">!=</td>
+            <td><input id="i4"></td>
+            <td><button onclick="testar('2', '!=')">Comparar</button></td>
+        </tr>
+        <tr>
+            <td><input id="i5"></td>
+            <td align="center">&gt;</td>
+            <td><input id="i6"></td>
+            <td><button onclick="testar('3', '>')">Comparar</button></td>
+        </tr>
+        <tr>
+            <td><input id="i7"></td>
+            <td align="center">&gt;=</td>
+            <td><input id="i8"></td>
+            <td><button onclick="testar('4', '>=')">Comparar</button></td>
+        </tr>
+        <tr>
+            <td><input id="i9"></td>
+            <td align="center">&lt;</td>
+            <td><input id="i10"></td>
+            <td><button onclick="testar('5', '<')">Comparar</button></td>
+        </tr>
+        <tr>
+            <td><input id="i11"></td>
+            <td align="center">&lt;=</td>
+            <td><input id="i12"></td>
+            <td><button onclick="testar('6', '<=')">Comparar</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function testar(linha, op) {
+            let n1 = Number(document.getElementById('i' + (linha * 2 - 1)).value);
+            let n2 = Number(document.getElementById('i' + (linha * 2)).value);
+
+            let res = (op == "==" && n1 == n2) ||
+                      (op == "!=" && n1 != n2) ||
+                      (op == ">"  && n1 > n2)  ||
+                      (op == ">=" && n1 >= n2) ||
+                      (op == "<"  && n1 < n2)  ||
+                      (op == "<=" && n1 <= n2);
+
+            alert(res ? "VERDADEIRO" : "FALSO");
+        }
+    </script>
+
+</body>
+</html>
